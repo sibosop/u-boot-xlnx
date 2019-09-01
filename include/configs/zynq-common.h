@@ -272,6 +272,8 @@
 		"echo Copying ramdisk... && " \
 		"sf read ${ramdisk_load_address} 0x620000 ${ramdisk_size} && " \
 		"bootm ${kernel_load_address} ${ramdisk_load_address} ${devicetree_load_address}\0" \
+  "kibbleboot=echo Kibble Board boot && " \
+    "bootm ${kibble_kernel_address} ${kibble_ramdisk_address} ${kibble_dtb_address}\0" \
 	"uenvboot=" \
 		"if run loadbootenv; then " \
 			"echo Loaded environment from ${bootenv}; " \
